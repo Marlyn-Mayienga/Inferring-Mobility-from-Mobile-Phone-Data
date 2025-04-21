@@ -29,11 +29,6 @@ For more information on the importance of a professional README for your reposit
 -->
 
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
 
 </div>
 
@@ -41,250 +36,71 @@ For more information on the importance of a professional README for your reposit
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+- [📖 Inferring Mobility from Mobile Phone Data](#about-project)
+    - Togo Mobility Analytics is a Python project that processes mobile phone call detail records to estimate where subscribers live and how they move over time. Through data cleaning, visualization, and two complementary inference algorithms, it computes summary statistics, maps cell-tower distributions, and determines each user’s most likely home prefecture. Finally, it compares algorithmic agreement and tracks weekly location changes, offering insights for humanitarian and development planning while addressing privacy and ethical considerations.
+  - [🛠 PYTHON](#built-with)
+    - [Python 3.x
+    - Jupyter Notebook for interactive analysis
+    - `pandas` for data manipulation
+    - `numpy` for numerical operations
+    - `matplotlib` and seaborn for data visualization
+    - `geopandas` and folium (or similar) for mapping towers (if implemented)
+    - `scikit-learn` for clustering analysis]
+  - [Key Features](#key-features)
+     - Summary Statistics: Compute total transactions, unique callers/receivers, days covered, and average calls per subscriber.
+     - Tower Mapping: Visualize cell tower locations over Togo's prefectural map and analyze spatial concentration.
+     - Home Inference Algorithms:
+     - Modal Nighttime Location: Identify home prefecture based on most frequent nighttime activity (8 PM–6 AM).
+     - Mode of Modes: Determine daily modal location (day vs. night) and compute overall mode across days.
+     - Algorithm Comparison: Quantify agreement and disagreement counts between inferred home locations.
+     - Mobility Inference: Track weekly inferred locations for selected subscribers and measure missing data rates.
+     - Ethical Reflection: Discuss applications in disaster response, poverty prediction, and public health, alongside privacy and bias concerns.
 - [💻 Getting Started](#getting-started)
+    - To get a local copy up and running, follow these steps.
   - [Prerequisites](#prerequisites)
+    - Python 3.x
+    - Jupyter Notebook or JupyterLab
+    - Git for cloning the repository
   - [Setup](#setup)
+     - Clone this repository: `git clone https://github.com/Marlyn-Mayienga/Inferring-Mobility-from-Mobile-Phone-Data.git`
   - [Install](#install)
+     - Install dependencies: `pip install pandas numpy matplotlib seaborn geopandas folium scikit-learn`
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
+     - Ensure the dataset files (`cdr.csv`, `tower_locations.csv`, `winequality-red.csv`) are in the project directory or the configured data/ folder.
+     - Open the Jupyter Notebook `Assignment1.ipynb` in Jupyter.
+     - Run all cells to reproduce the analysis:
+     - Summary statistics (Part 1)
+     - Tower mapping (Part 2)
+     - Home inference algorithms and comparison (Part 3)
+     - Weekly mobility inference (Part 4)
 - [👥 Authors](#authors)
+   - 👤 **Marlyn Mayienga**
+
+- GitHub: [@Marlyn_Mayienga](https://github.com/Marlyn_Mayienga)
+- Twitter: [@Merl_Mayienga](https://twitter.com/M_ayienga)
+- LinkedIn: [Marlyn_Mayienga](https://linkedin.com/in/Marlyn_Mayienga)
 - [🔭 Future Features](#future-features)
+    - Add a third inference algorithm (e.g., random forest classification) for home location.
+    - Build an interactive dashboard with real-time data updates.
+    - Extend analysis to multi-country CDR datasets for comparative studies.
+    - Integrate mobile app interface for visualizing individual subscriber paths.
+
 - [🤝 Contributing](#contributing)
+    - Fork the project
+    - Create your feature branch (`git checkout -b feature/AmazingFeature`)
+    - Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+    - Push to the branch (`git push origin feature/AmazingFeature`)
+    - Open a pull request
 - [⭐️ Show your support](#support)
+   - If you like this project, please give it a ⭐️ on GitHub!
 - [🙏 Acknowledgements](#acknowledgements)
+   - R. Warren, E. Aiken, and J. Blumenstock, “Home Location Detection from Mobile Phone Data: Evidence from Togo,” COMPASS ’22.
+   - “Machine learning and phone data can improve targeting of humanitarian aid,” Nature.
+   - J. Blumenstock et al., “Predicting poverty and wealth from mobile phone metadata,” Science, 2015.
+   - “Using Mobile Phone Data to Predict the Spatial Spread of Cholera,” Scientific Reports.
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
-
-<!-- PROJECT DESCRIPTION -->
-
-# 📖 [your_project_name] <a name="about-project"></a>
-
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
-
-## 🛠 Built With <a name="built-with"></a>
-
-### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
-
-### Setup
-
-Clone this repository to your desired folder:
-
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
-
-### Install
-
-Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
-
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this project...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
+   - This project is [MIT](./LICENSE) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
